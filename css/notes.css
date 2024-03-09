@@ -1,0 +1,129 @@
+.notes_main_app {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.notes_main_app .notes_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.notes_main_app .notes_container .single_note {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.single_note .notes_text_date span {
+  color: rgb(0, 136, 255);
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.single_note .notes_text_date textarea {
+  color: black;
+  font-weight: 400;
+  font-size: 0.9em;
+  text-align: justify;
+  margin: auto;
+  padding: 0 0 0 1em;
+}
+.single_note .notes_text_date textarea:focus {
+  background-color: white;
+}
+
+.notes_btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  padding: 0.3em 1em;
+  cursor: pointer;
+}
+
+.notes_btns svg {
+  margin-right: 0.2em;
+}
+.notes_btns:hover svg {
+  fill: rgb(123, 123, 123);
+}
+.notes_btns:hover span {
+  color: rgb(123, 123, 123);
+}
+
+.single_note .notes_footer_container {
+  width: 100%;
+}
+
+.single_note .notes_footer_container .noteFooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.single_note .notes_footer_container .noteFooter .notes_btns {
+  width: 85px;
+}
+
+.notes_popup_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  padding: 1em;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0 20px 2px black;
+  z-index: 1000;
+  cursor: context-menu;
+}
+
+.notes_popup_container .popupStyling {
+  position: relative;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.notes_popup_container .popupStyling svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-25%, 50%);
+  fill: black;
+}
+
+.notes_popup_container .popupStyling:hover svg {
+  fill: black;
+}
+
+.notes_popup_container .popupStyling svg:hover {
+  fill: rgb(92, 92, 92);
+}
+
+.notes_popup_container .popupStyling h5 {
+  margin-bottom: 1em;
+  font-size: 1.4em;
+}
+
+.notes_popup_container .popupStyling textarea {
+  margin-bottom: 1em;
+}
+
+.notes_popup_container .popupStyling select {
+  margin-bottom: 1em;
+}
+
+.notes_popup_container .popupStyling .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+}

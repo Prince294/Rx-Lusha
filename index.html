@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Login Page</title>
+   
+    <script src="js/jQuery.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="css/index.css" rel="stylesheet" />
+  </head>
+  <style>
+    #pswd_info li {
+      padding-left: 5px;
+    }
+  </style>
+  <body>
+    <div class="userContainer" id="userContainer" style="text-align: center">
+      <div class="login_Container">
+       
+        <img
+          src="img/recruit_logo.jpg"
+          alt=""
+          style="
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100px;
+            height: 40px;
+          "
+        />
+
+       
+        <div
+          class="login_field"
+          id="loginFormContainer"
+          style="margin-top: 10px"
+        >
+          <h2>User Login</h2>
+          <input
+            type="text"
+            class="inpu1"
+            id="emailid"
+            placeholder="User ID/Email"
+            name="emailid"
+            spellcheck="false"
+            autocomplete="on"
+
+            value="sanu16236@gmail.com"
+            required
+          />
+          <!-- value="sanu16236@gmail.com" -->
+          <input
+            type="password"
+            class="inpu1 pwd"
+            id="password"
+            placeholder="Password"
+            name="password"
+            autocomplete="on"
+            value="shanu"
+            required
+          />
+          <span class="input-group-btn" id="input-group-btn">
+            <button
+              class="btn btn-default reveal"
+              type="button"
+              style="margin: 0; padding: 0; font-size: 12px"
+            >
+              <i class="glyphicon glyphicon-eye-open"></i>
+            </button>
+          </span>
+          <input
+            type="submit"
+            class="inpu2"
+            id="loginBtn"
+            value="Login"
+            name="login"
+          />
+
+          <p style="margin-top: 20px;">
+            If you are not registered yet please
+            <span id="registerShowDisplay">register now</span>
+          </p>
+          <br>
+          <div class="xraySearchBtn">
+            <span id="xraySearchBtn">X-Ray Search</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="register_container" id="smmreg2">
+        <span id="smmClose12" title="Back">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 11H6.83L10.41 7.41L9 6L3 12L9 18L10.41 16.59L6.83 13H21V11Z"
+              fill="#FF0000"
+            />
+            <path
+              d="M0 0V-1H-1V0H0ZM24 0H25V-1H24V0ZM24 24V25H25V24H24ZM0 24H-1V25H0V24ZM0 1H24V-1H0V1ZM23 0V24H25V0H23ZM24 23H0V25H24V23ZM1 24V0H-1V24H1Z"
+              fill="white"
+            />
+          </svg>
+        </span>
+        <img
+          src="img/recruit_logo.jpg"
+          alt=""
+          style="
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100px;
+            height: 40px;
+            margin-left: -29px;
+          "
+        />
+
+        <h1>Welcome to Social Media Manager Plugin</h1>
+        <h2 class="error">User Register</h2>
+        <div class="regiter_field" action="" method="post">
+          <input
+            type="email"
+            class="lsguiinput"
+            id="emailId"
+            placeholder="Email Id"
+            name="emailId"
+            autocomplete="off"
+            spellcheck="false"
+            required
+          />
+          <input
+            type="text"
+            class="lsguiinput"
+            id="firstName"
+            placeholder="First Name"
+            name="firstName"
+            autocomplete="off"
+            spellcheck="false"
+            required
+          />
+          <input
+            type="text"
+            class="lsguiinput"
+            id="lastName"
+            placeholder="Last Name"
+            name="lastName"
+            autocomplete="off"
+            spellcheck="false"
+            required
+          />
+          <input
+            type="text"
+            class="lsguiinput"
+            id="phone"
+            placeholder="Contact Number"
+            autocomplete="off"
+            maxlength="11"
+            name="phone"
+            required
+          />
+          <input
+            type="password"
+            class="lsguiinput pwd1"
+            id="Password"
+            placeholder="Password"
+            autocomplete="off"
+            name="Password"
+            required
+          />
+          <span class="input-group-btn" id="input-group-btn1">
+            <button
+              class="btn btn-default reveal"
+              type="button"
+              id="anotherreveal"
+            >
+              <i class="glyphicon glyphicon-eye-open"></i>
+            </button>
+          </span>
+          <div id="pswd_info">
+            <ul>
+              <li id="letter" class="invalid">
+                At least <strong>one letter</strong>
+              </li>
+              <li id="capital" class="invalid">
+                At least <strong>one capital letter</strong>
+              </li>
+              <li id="number" class="invalid">
+                At least <strong>one number</strong>
+              </li>
+              <li id="length" class="invalid">
+                Be at least <strong>8 characters</strong>
+              </li>
+            </ul>
+          </div>
+        
+          <input
+            type="submit"
+            value="Register"
+            name="register"
+            class="lsguiinput lsguiinput3"
+            style="cursor: pointer"
+            id="registerButton"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="mainframe" style="display: none">
+      <img
+        src="img/recruit_logo.jpg"
+        id="head_logo"
+        alt=""
+        style="width: 170px; height: 40px; margin-top: 8px; margin-left: 9px"
+      />
+      <p
+        style="
+          padding-left: 70px;
+          margin-top: 20px;
+          margin-bottom: 10px;
+          border-right-width: 10px;
+        "
+      >
+        You are currently logged in
+      </p>
+      <br>
+      <div class="xraySearchBtn" style="display:flex;justify-content: center;font-size: 1.2em;">
+        <span id="xraySearchLoginBtn">X-Ray Search</span>
+      </div>
+      <a
+        class="navbar_icon"
+        href="#"
+        id="logout"
+        style="float: right; margin-right: 10px; margin-top: 15px;margin-bottom:1em"
+        >Logout<img src="img/account.png" alt="profile"
+      /></a>
+
+
+    
+      </div>
+    </div>
+
+
+    <div id="x-ray" style="display: none">
+      <div id="backXrayBtn" style="display: none;">
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 11H6.83L10.41 7.41L9 6L3 12L9 18L10.41 16.59L6.83 13H21V11Z"
+              fill="#FF0000"
+            />
+            <path
+              d="M0 0V-1H-1V0H0ZM24 0H25V-1H24V0ZM24 24V25H25V24H24ZM0 24H-1V25H0V24ZM0 1H24V-1H0V1ZM23 0V24H25V0H23ZM24 23H0V25H24V23ZM1 24V0H-1V24H1Z"
+              fill="white"
+            />
+          </svg>
+      </div>
+      <div id="backXrayLoginBtn" style="display: none;">
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 11H6.83L10.41 7.41L9 6L3 12L9 18L10.41 16.59L6.83 13H21V11Z"
+              fill="#FF0000"
+            />
+            <path
+              d="M0 0V-1H-1V0H0ZM24 0H25V-1H24V0ZM24 24V25H25V24H24ZM0 24H-1V25H0V24ZM0 1H24V-1H0V1ZM23 0V24H25V0H23ZM24 23H0V25H24V23ZM1 24V0H-1V24H1Z"
+              fill="white"
+            />
+          </svg>
+      </div>
+      <div id="myModal2" class="modal">
+        <div class="modal-content" id="addlist">
+          <button id="close1"><i class="fas fa-times"></i></button>
+
+          <h3 style="font-weight: bold">Your Search Query</h3>
+          <br />
+          <h5 style="font-size: 12px; display: none">
+            Copy, save or open the search string in Google and find the right
+            candidates
+          </h5>
+          <input
+            autocomplete="off"
+            type="text"
+            id="popup_input"
+            style="
+              display: none;
+              padding: 8px 2px;
+              font-size: 12px;
+              border-radius: 3px;
+              width: 425px;
+            "
+          />
+
+          <div class="conatiner-fluid" style="margin-left: 25px">
+            <button
+              id="copy_url"
+              style="
+                background-color: #f2f2f2;
+                border: 1px solid #d9d9d9;
+                display: none;
+                color: #2196f3;
+                font-size: 18px;
+                padding: 8px 2px;
+                border-radius: 3px;
+                width: 425px;
+                border-left: none;
+                border-right: none;
+              "
+              class="copy-btn"
+            >
+              <i class="far fa-copy"></i> Copy URL
+            </button>
+
+            <div style="padding-bottom: 15px">
+              <button
+                id="save"
+                style="
+                  background-color: #f2f2f2;
+                  border: 1px solid #d9d9d9;
+                  display: block;
+                  background-color: #2196f3;
+                  color: white;
+                  font-size: 18px;
+                  padding: 8px 2px;
+                  border-radius: 3px;
+                  width: 290px;
+                  border-left: none;
+                  border-right: none;
+                "
+              >
+                <i class="fas fa-search-plus"></i> Save Search
+              </button>
+            </div>
+            <div style="padding-bottom: 30px">
+              <button
+                id="jump_bt"
+                style="
+                  background-color: #2196f3;
+                  border: 1px solid #d9d9d9;
+                  display: block;
+                  color: white;
+                  font-size: 18px;
+                  padding: 8px 2px;
+                  border-radius: 3px;
+                  width: 290px;
+                "
+              >
+                <i class="fas fa-external-link-alt"></i> Open In Google
+              </button>
+            </div>
+
+            <a
+              href=""
+              target="_blank"
+              style="visibility: hidden"
+              id="go_to_link"
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="header"
+        style="padding-left: 0; margin-left: 0; display: none"
+      >
+        <h3
+          id="h1"
+          style="
+            margin-bottom: 0;
+            margin-top: 0;
+            font-weight: bold;
+            color: #2196f3;
+            font-family: cursive;
+            font-size: 20px;
+            padding-left: 10px;
+            padding-bottom: 0;
+            padding-top: 10px;
+          "
+        >
+          X-Ray Search
+        </h3>
+        <!-- <h5 id="h2" style="font-size: 10px; padding-left: 10px; color: black; opacity: 0.6; font-weight: 300; padding-top: 5px; margin-top: 0;">X-Ray Search</h5> -->
+        <a
+          id="l1"
+          href="#linkedin"
+          style="
+            color: black;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-bottom: 0;
+            font-size: 12px;
+            margin-left: 5px;
+            position: absolute;
+            margin-top: 25px;
+          "
+          class="active"
+          ><i style="font-size: 10px" class="fab fa-linkedin"></i>
+          <span style="padding-left: 3px">LinkedIn</span>
+        </a>
+        <a
+          id="l2"
+          href="#dribble"
+          style="
+            color: black;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-bottom: 0;
+            font-size: 12px;
+            margin-left: 90px;
+            position: absolute;
+            margin-top: 25px;
+          "
+        >
+          <i style="font-size: 10px" class="fab fa-dribbble"></i>
+          <span style="padding-left: 1px">Dribble</span>
+        </a>
+        <a
+          id="l3"
+          href="#github"
+          style="
+            color: black;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-bottom: 0;
+            font-size: 12px;
+            margin-left: 170px;
+            position: absolute;
+            margin-top: 25px;
+          "
+        >
+          <i style="font-size: 10px" class="fab fa-github"></i
+          ><span style="padding-left: 3px">GitHub</span>
+        </a>
+        <a
+          id="l4"
+          href="#stackoverflow"
+          style="
+            color: black;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-bottom: 0;
+            font-size: 12px;
+            margin-left: 250px;
+            position: absolute;
+            margin-top: 25px;
+          "
+        >
+          <i style="font-size: 10px" class="fab fa-stack-overflow"></i
+          ><span style="padding-left: 3px">Stack Overflow</span>
+        </a>
+        <a
+          id="l5"
+          href="#twitter"
+          style="
+            color: black;
+            padding-left: 6px;
+            padding-right: 5px;
+            margin-bottom: 0;
+            font-size: 12px;
+            margin-left: 370px;
+            position: absolute;
+            margin-top: 25px;
+          "
+        >
+          <i style="font-size: 10px" class="fab fa-twitter"></i
+          ><span style="padding-left: 3px">Twitter</span>
+        </a>
+        <a
+          id="l6"
+          href="#xing"
+          style="
+            color: black;
+            padding-left: 4px;
+            padding-right: 5px;
+            margin-bottom: 0;
+            font-size: 12px;
+            margin-left: 450px;
+            position: absolute;
+            margin-top: 25px;
+          "
+        >
+          <i style="font-size: 10px" class="fab fa-xing"></i
+          ><span style="padding-left: 3px">Xing</span>
+        </a>
+      </div>
+
+      <div id="o1">
+        <h4 class="xray_head">
+          <strong> Easily use Google to search profiles</strong>
+        </h4>
+        <label id="por_label" for="portal" class="field__label label-d"
+          >Portal</label
+        >
+
+        <select id="portal">
+          <option style="font-size: 13px" id="l">Linkedin</option>
+          <option style="font-size: 13px" id="d">Dribble</option>
+          <option style="font-size: 13px" id="g">Github</option>
+          <option style="font-size: 13px" id="s">Stackoverflow</option>
+          <option style="font-size: 13px" id="t">Twitter</option>
+          <option style="font-size: 13px" id="x">Xing</option>
+        </select>
+
+        <div id="linkedin" style="display: block">
+          <form style="padding-left: 0; margin-left: 10px" id="linkform">
+            <div class="row">
+              <div class="col-6">
+                <div>
+                  <label for="country" class="field__label label-d"
+                    >Country</label
+                  >
+                  <select
+                    tabindex="-1"
+                    name="country"
+                    id="country"
+                    class="field__control field__control--select js-select-country select2-hidden-accessible"
+                    aria-hidden="true"
+                  >
+                    <option value="all" selected="selected">
+                      All countries
+                    </option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="www">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="af">Afghanistan</option>
+                    <option value="al">Albania</option>
+                    <option value="dz">Algeria</option>
+                    <option value="ao">Angola</option>
+                    <option value="ar">Argentina</option>
+                    <option value="am">Armenia</option>
+                    <option value="aw">Aruba</option>
+                    <option value="au">Australia</option>
+                    <option value="at">Austria</option>
+                    <option value="bh">Bahrain</option>
+                    <option value="bd">Bangladesh</option>
+                    <option value="by">Belarus</option>
+                    <option value="be">Belgium</option>
+                    <option value="bz">Belize</option>
+                    <option value="bo">Bolivia</option>
+                    <option value="ba">Bosnia and Herzegovina</option>
+                    <option value="br">Brazil</option>
+                    <option value="bg">Bulgaria</option>
+                    <option value="cl">Chile</option>
+                    <option value="cn">China</option>
+                    <option value="co">Colombia</option>
+                    <option value="cr">Costa Rica</option>
+                    <option value="hr">Croatia</option>
+                    <option value="cy">Cyprus</option>
+                    <option value="cz">Czech Republic</option>
+                    <option value="dk">Denmark</option>
+                    <option value="dm">Dominica</option>
+                    <option value="do">Dominican Republic</option>
+                    <option value="ec">Ecuador</option>
+                    <option value="eg">Egypt</option>
+                    <option value="sv">El Salvador</option>
+                    <option value="ee">Estonia</option>
+                    <option value="fk">Falkland Islands</option>
+                    <option value="fi">Finland</option>
+                    <option value="fr">France</option>
+                    <option value="ge">Georgia</option>
+                    <option value="de">Germany</option>
+                    <option value="gh">Ghana</option>
+                    <option value="gi">Gibraltar</option>
+                    <option value="gr">Greece</option>
+                    <option value="gt">Guatemala</option>
+                    <option value="hk">Hong Kong</option>
+                    <option value="hu">Hungary</option>
+                    <option value="is">Iceland</option>
+                    <option value="in">India</option>
+                    <option value="id">Indonesia</option>
+                    <option value="ir">Iran</option>
+                    <option value="ie">Ireland</option>
+                    <option value="il">Israel</option>
+                    <option value="it">Italy</option>
+                    <option value="jm">Jamaica</option>
+                    <option value="jp">Japan</option>
+                    <option value="jo">Jordan</option>
+                    <option value="kz">Kazakhstan</option>
+                    <option value="ke">Kenya</option>
+                    <option value="kr">Korea</option>
+                    <option value="kw">Kuwait</option>
+                    <option value="la">Laos</option>
+                    <option value="lv">Latvia</option>
+                    <option value="lb">Lebanon</option>
+                    <option value="lu">Luxembourg</option>
+                    <option value="mk">Macedonia</option>
+                    <option value="my">Malaysia</option>
+                    <option value="mt">Malta</option>
+                    <option value="mx">Mexico</option>
+                    <option value="md">Moldova</option>
+                    <option value="mc">Monaco</option>
+                    <option value="me">Montenegro</option>
+                    <option value="ma">Morocco</option>
+                    <option value="mz">Mozambique</option>
+                    <option value="mm">Myanmar</option>
+                    <option value="np">Nepal</option>
+                    <option value="nl">Netherlands</option>
+                    <option value="nz">New Zealand</option>
+                    <option value="ng">Nigeria</option>
+                    <option value="no">Norway</option>
+                    <option value="om">Oman</option>
+                    <option value="pk">Pakistan</option>
+                    <option value="pa">Panama</option>
+                    <option value="pe">Peru</option>
+                    <option value="ph">Philippines</option>
+                    <option value="pl">Poland</option>
+                    <option value="pt">Portugal</option>
+                    <option value="pr">Puerto Rico</option>
+                    <option value="qa">Qatar</option>
+                    <option value="ro">Romania</option>
+                    <option value="ru">Russian Federation</option>
+                    <option value="st">Sao Tome and Principe</option>
+                    <option value="sa">Saudi Arabia</option>
+                    <option value="rs">Serbia</option>
+                    <option value="sg">Singapore</option>
+                    <option value="sk">Slovak Republic</option>
+                    <option value="si">Slovenia</option>
+                    <option value="za">South Africa</option>
+                    <option value="es">Spain</option>
+                    <option value="lk">Sri Lanka</option>
+                    <option value="se">Sweden</option>
+                    <option value="ch">Switzerland</option>
+                    <option value="tw">Taiwan</option>
+                    <option value="tz">Tanzania</option>
+                    <option value="th">Thailand</option>
+                    <option value="tg">Togo</option>
+                    <option value="to">Tonga</option>
+                    <option value="tt">Trinidad and Tobago</option>
+                    <option value="tn">Tunisia</option>
+                    <option value="tr">Turkey</option>
+                    <option value="ug">Uganda</option>
+                    <option value="ua">Ukraine</option>
+                    <option value="ae">United Arab Emirates</option>
+                    <option value="uy">Uruguay</option>
+                    <option value="uz">Uzbekistan</option>
+                    <option value="ve">Venezuela</option>
+                    <option value="vn">Vietnam</option>
+                    <option value="zw">Zimbabwe</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="job-title" class="field__label label-d"
+                    >Job title</label
+                  >
+                  <input
+                    tabindex="2"
+                    type="text"
+                    name="job-title"
+                    id="job-title"
+                    class="field__control field__control--input ui-autocomplete-input"
+                    placeholder="E.g. accountant OR cfo"
+                    value=""
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="position: relative">
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="include-keywords" class="field__label label-d"
+                    >keywords to <strong>include</strong></label
+                  >
+                  <input
+                    tabindex="3"
+                    type="text"
+                    name="include-keywords"
+                    id="include-keywords"
+                    class="field__control field__control--input"
+                    placeholder="E.g. London OR Paris AND html"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="exclude-keywords" class="field__label label-d"
+                    >Keywords to <strong>exclude</strong></label
+                  >
+                  <input
+                    tabindex="4"
+                    type="text"
+                    name="exclude-keywords"
+                    id="exclude-keywords"
+                    class="field__control field__control--input"
+                    placeholder="E.g. Assistant OR secretary"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="position: relative">
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="education" class="field__label label-d"
+                    >Education</label
+                  >
+                  <select
+                    tabindex="-1"
+                    name="education"
+                    id="education"
+                    class="field__control field__control--select js-select select2-hidden-accessible"
+                    aria-hidden="true"
+                  >
+                    <option value="all">All candidates</option>
+                    <option value="bachelor+degree+licence">Degree</option>
+                    <option
+                      value="masters+mba+master+diplome+msc+magister+magisteres+maitrise"
+                    >
+                      Masters Degree
+                    </option>
+                    <option
+                      value="dr+Ph.D.+PhD+D.Phil+DPhil+doctor+Doctorado+Doktor+Doctorat+Doutorado+DrSc+Tohtori+Doctorate+Doctora+Duktorah+Dottorato+Daktaras+Doutoramento+Doktorgrad"
+                    >
+                      Doctoral Degree
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="company" class="field__label label-d"
+                    >Current Employer</label
+                  >
+                  <input
+                    tabindex="6"
+                    name="company"
+                    id="company"
+                    class="field__control field__control--input"
+                    placeholder="E.g. Paypal"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="col-7 submit-btn-div button-footer">
+            <!-- <input type="submit" class="inpu2" id = "submit" value="Find the right people on LinkedIn" name = "autofill" > -->
+
+            <button tabindex="7" id="submit" class="button-default">
+              Search Candidates
+            </button>
+            <button tabindex="7" id="rsubmit" class="button-default">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div id="dribble" style="display: none">
+          <!-- <h4 class="xray_head" style="margin-top: 0; padding-top: 20px; font-size: 16px;"><strong> Easily use Google to search profiles on Dribble</strong></h4> -->
+          <form style="padding-left: 0" id="dribform">
+            <div>
+              <div class="col-6">
+                <div>
+                  <label for="skillinc" class="field__label label-d"
+                    >Skills to include</label
+                  >
+                  <input
+                    tabindex="1"
+                    name="skillinc"
+                    id="skillinc"
+                    class="field__control field__control--input"
+                    placeholder="E.g. logo design, vector, brand"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div>
+                  <label for="skillexc" class="field__label label-d"
+                    >Skills to exclude</label
+                  >
+                  <input
+                    tabindex="2"
+                    name="skillexc"
+                    id="skillexc"
+                    class="field__control field__control--input"
+                    placeholder="E.g. animation"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="col-7 submit-btn-div button-footer">
+            <!-- <input type="submit" class="inpu2" id = "submit2" value="Find the right people on Dribble" name = "autofill" > -->
+
+            <button tabindex="3" id="submit2" class="button-default">
+              Search Candidates
+            </button>
+            <button tabindex="7" id="rsubmit2" class="button-default">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div id="github" style="margin-left: 0; padding-left: 0; display: none">
+          <!-- <h4 class="xray_head" ><strong> Easily use Google to search profiles on GitHub</strong></h4> -->
+          <form
+            class="container-fluid"
+            style="padding-left: 0; margin-left: 10px"
+            id="gitform"
+          >
+            <div class="row" style="position: relative">
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="gitskillinc" class="field__label label-d"
+                    >Skills to include</label
+                  >
+                  <input
+                    tabindex="1"
+                    name="skillinc"
+                    id="gitskillinc"
+                    class="field__control field__control--input"
+                    placeholder="E.g. PHP, Linux, Ruby"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="city" class="field__label label-d"
+                    >City or Country</label
+                  >
+                  <input
+                    tabindex="2"
+                    name="city"
+                    id="city"
+                    class="field__control field__control--input"
+                    placeholder="E.g. New York, Switzerland"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="col-7 submit-btn-div button-footer">
+            <!-- <input type="submit" class="inpu2" id = "submit3" value="Find the right people on GitHub" name = "autofill" > -->
+            <button tabindex="3" id="submit3" class="button-default">
+              Search Candidates
+            </button>
+            <button tabindex="7" id="rsubmit3" class="button-default">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="stackoverflow"
+          style="margin-left: 0; padding-left: 0; display: none"
+        >
+          <!-- <h4 class="xray_head" ><strong> Easily use Google to search profiles on Stack <br>Overflow</strong></h4> -->
+          <form
+            class="container-fluid"
+            style="padding-left: 0; margin-left: 10px"
+            id="stackform"
+          >
+            <div class="row" style="position: relative">
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="stackskillinc" class="field__label label-d"
+                    >Skills to include</label
+                  >
+                  <input
+                    tabindex="1"
+                    name="sskillinc"
+                    id="stackskillinc"
+                    class="field__control field__control--input"
+                    placeholder="E.g. PHP, Linux, Ruby"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="stackcity" class="field__label label-d"
+                    >City or Country</label
+                  >
+                  <input
+                    tabindex="2"
+                    name="city"
+                    id="stackcity"
+                    class="field__control field__control--input"
+                    placeholder="E.g. New York, Switzerland"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="col-7 submit-btn-div button-footer">
+            <!-- <input type="submit" class="inpu2" id = "submit4" value="Find the right people on Stack Overflow" name = "autofill" > -->
+            <button tabindex="3" id="submit4" class="button-default">
+              Search Candidates
+            </button>
+            <button tabindex="7" id="rsubmit4" class="button-default">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="twitter"
+          style="margin-left: 0; padding-left: 0; display: none"
+        >
+          <!-- <h4 class="xray_head"><strong> Easily use Google to search profiles on Twitter</strong></h4> -->
+          <form
+            class="container-fluid"
+            style="padding-left: 0; margin-left: 10px"
+            id="twitform"
+          >
+            <div class="row" style="position: relative">
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="twittercity" class="field__label label-d"
+                    >City or Country</label
+                  >
+                  <input
+                    tabindex="1"
+                    name="tcity"
+                    id="twittercity"
+                    class="field__control field__control--input"
+                    placeholder="E.g. New York OR London"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <div class="col-6" style="padding-top: 10px">
+                <div class="field field--with-help">
+                  <label for="twitterskillinc" class="field__label label-d"
+                    >Skills to include</label
+                  >
+                  <input
+                    tabindex="2"
+                    name="tskillinc"
+                    id="twitterskillinc"
+                    class="field__control field__control--input"
+                    placeholder="E.g. PHP, Linux, Ruby"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="position: relative">
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="twitterskillexc" class="field__label label-d"
+                    >Skills to exclude</label
+                  >
+                  <input
+                    tabindex="3"
+                    name="tskillexc"
+                    id="twitterskillexc"
+                    class="field__control field__control--input"
+                    placeholder="E.g. Illustrator"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="col-7 submit-btn-div button-footer">
+            <!-- <input type="submit" class="inpu2" id = "submit5" value="Find the right people on Twitter" name = "autofill" > -->
+
+            <button tabindex="4" id="submit5" class="button-default">
+              Search Candidates
+            </button>
+            <button tabindex="7" id="rsubmit5" class="button-default">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div id="xing" style="margin-left: 0; padding-left: 0; display: none">
+          <!-- <h4 class="xray_head"><strong> Easily use Google to search profiles on Xing</strong></h4> -->
+          <form
+            class="container-fluid"
+            style="padding-left: 0; margin-left: 10px"
+            id="xingform"
+          >
+            <div class="row" style="position: relative">
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="xingjob" class="field__label label-d"
+                    >Job title</label
+                  >
+                  <input
+                    tabindex="1"
+                    name="xjob"
+                    id="xingjob"
+                    class="field__control field__control--input"
+                    placeholder="E.g. accountant OR cfo"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="xingskillinc" class="field__label label-d"
+                    >Location to include</label
+                  >
+                  <input
+                    tabindex="2"
+                    name="xskillinc"
+                    id="xingskillinc"
+                    class="field__control field__control--input"
+                    placeholder="E.g. Engineer, Berlin"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="padding-top: 0px; position: relative">
+              <div class="col-6">
+                <div class="field field--with-help">
+                  <label for="xingskillexc" class="field__label label-d"
+                    >Keywords to exclude</label
+                  >
+                  <input
+                    tabindex="3"
+                    name="xskillexc"
+                    id="xingskillexc"
+                    class="field__control field__control--input"
+                    placeholder="E.g. Junior"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <!-- <button class="button-default search_job" id="form_">Search candidates on naukri</button> -->
+          <div class="col-7 submit-btn-div button-footer">
+            <!-- <input type="submit" class="inpu2" id = "submit6" value="Find the right people on Xing" name = "autofill" style=" background-color: #2196f3;height: 30px; width: 280px;margin-left: -60px; "> -->
+
+            <button tabindex="4" id="submit6" class="button-default">
+              Search Candidates
+            </button>
+            <button tabindex="7" id="rsubmit6" class="button-default">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div id="save_div" style="height: 115px; overflow-x: hidden">
+          <h4
+            style="
+              padding-top: 4px;
+              font-size: 16px;
+              margin-bottom: -2px;
+              color: #3d5a80;
+            "
+          >
+            <strong> Saved Search</strong>
+          </h4>
+          <div id="saved_file" style="margin-top: 10px">
+            <a href="#" id="saved_more">More Items</a>
+          </div>
+          <div id="saved_file_more" style="display: none">
+            <a href="#" id="saved_less">Less Items</a>
+          </div>
+
+          <div id="saved" style="padding-left: 0px; color: #2196f3">
+            <div
+              class="save"
+              style="
+                padding-left: 0px;
+                margin-top: 0;
+                padding-top: 0px;
+                height: 50px;
+              "
+            >
+              <h5 class="panel__title">Making the same search regularly?</h5>
+              <p>Save it, then find it here!</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            margin-left: 10px;
+            bottom: 0px;
+            font-size: 8px;
+            color: #a0a0a0;
+            position: absolute;
+            display: none;
+          "
+        >
+          <footer class="footer row" style="font-size: 10px; color: #a0a0a0">
+            <p id="b0" class="footer__item text--small">Copyright © 2020</p>
+            <a
+              id="b1"
+              class="text--small"
+              style="color: #a0a0a0; padding-left: 21px"
+              href="https://www.team4progress.com/"
+              target="_blank"
+              title="Opens a new window."
+              >Team4Progress
+              <i class="fas fa-external-link-alt" style="color: #a0a0a0"></i>
+            </a>
+            <a
+              id="b2"
+              class="text--small"
+              style="color: #a0a0a0; padding-left: 21px"
+              href="https://recruitin.net/user-guide.php"
+              >User guide</a
+            >
+            <a
+              id="b3"
+              class="text--small"
+              style="color: #a0a0a0; padding-left: 21px"
+              href="https://recruitin.net/about.php"
+              >About</a
+            >
+            <a
+              id="b4"
+              class="text--small"
+              style="color: #a0a0a0; padding-left: 21px"
+              href="https://recruitin.net/privacy-policy.php"
+              >Privacy policy</a
+            >
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/xray-search.js"></script>
+    <script src="js/frame.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/apicall.js"></script>
+  </body>
+</html>

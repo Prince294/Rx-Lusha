@@ -1,0 +1,128 @@
+{
+  "manifest_version": 3,
+  "name": "Rx-Apollo",
+  "version": "1.0.0",
+  "description": "Clone of Apollo App",
+
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "img/16.png",
+      "32": "img/32.png",
+      "48": "img/48.png"
+    },
+    "icons": {
+      "16": "img/16.png",
+      "32": "img/32.png",
+      "48": "img/48.png"
+    }
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+
+  "content_scripts": [
+    {
+      "exclude_matches": [
+        "https://www.lusha.co/*",
+        "https://www.lusha.com/*",
+        "https://www.salesforce.com/*",
+        "https://*.lightning.force.com/*",
+        "https://*.mail.google.com/*"
+      ],
+      "js": [
+        "js/jQuery.js",
+        "js/linkedin.js",
+        "js/emailphoneScrapper.js",
+        "js/content.js"
+      ],
+      "matches": [
+        "https://dashboard.lusha.com/*",
+        "https://*.linkedin.com/*",
+        "https://*.salesforce.com/*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+
+  "minimum_chrome_version": "55",
+  "permissions": ["tabs", "storage", "nativeMessaging"],
+
+  "host_permissions": [
+    "https://*.lusha.co/*",
+    "https://*.linkedin.com/*",
+    "https://*.salesforce.com/*",
+    "https://lusha.recnxt.cloud/*"
+  ],
+
+  "optional_host_permissions": [
+    "https://*.lightning.force.com/*",
+    "https://*.mail.google.com/*",
+    "*://*/*"
+  ],
+
+  "short_name": "Lusha",
+
+  "web_accessible_resources": [
+    {
+      "resources": ["img/loading.gif"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["img/move.png"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["img/recruit_logo1.jpg"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["img/recruit_logo.jpg"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["img/recruit_logo_header.jpg"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["html/frame.html"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["html/notes.html"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["css/frame.css"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["css/notes.css"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["js/jQuery.js"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["js/linkedin.js"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["js/xray-search.js"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["js/emailphoneScrapper.js"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["js/testing.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';img-src 'self';style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;font-src 'self' data: https://cdnjs.cloudflare.com;",
+    "sandbox": "sandbox allow-scripts; script-src 'self'; object-src 'self';style-src 'self';"
+  }
+}

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="mainframe">
+      <!--------------------- header setting section ---------------------->
+      <section class="header_setting_section" id="header_setting_section">
+        <i
+          class="fa-solid fa-xmark header_setting_close_btn padding_background_effect"
+          id="header_setting_close_btn"
+        ></i>
+        <h3>Settings and quick links</h3>
+        <ul class="first_setting_section">
+          <li class="list_hover_effect">
+            <i class="fa-solid fa-chart-pie"></i><span>Dashboard</span>
+          </li>
+          <li class="list_hover_effect">
+            <i class="fa-solid fa-bars-staggered"></i><span>View Lists</span>
+          </li>
+          <li class="list_hover_effect">
+            <i class="fa-solid fa-paper-plane"></i><span>View Sequences</span>
+          </li>
+          <li class="list_hover_effect">
+            <i class="fa-solid fa-user-plus"></i
+            ><span>View Saved Contacts</span>
+          </li>
+          <div class="line_break"></div>
+          <li class="list_hover_effect">
+            <i class="fa-solid fa-puzzle-piece"></i
+            ><span>View Integrations</span>
+          </li>
+          <li class="list_hover_effect">
+            <i class="fa-solid fa-circle-info"></i><span>Help Center</span>
+          </li>
+          <div class="line_break"></div>
+          <li>
+            <i class="fa-solid fa-arrows-left-right-to-line"></i>
+            <div class="on_off_switch" id="plugin_position_left_and_right">
+              <div class="ball">L</div>
+            </div>
+            <span>Plugin Position</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-expand"></i>
+            <div class="on_off_switch" id="plugin_auto_expand">
+              <div class="ball"></div>
+            </div>
+            <span>Auto Expand Plugin</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-globe"></i>
+            <div class="on_off_switch">
+              <div class="ball"></div>
+            </div>
+            <span>Lusha Everywhere</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- notification section  -->
+      <div
+        id="popup_notification"
+        class="popup_notification"
+        style="display: none"
+      >
+        <div>
+          <i
+            class="fa-regular fa-circle-xmark close_popup_notification"
+            id="close_popup_notification"
+          ></i>
+
+          <p id="popup_notification_content">No Credit Left</p>
+        </div>
+      </div>
+
+      <!-- header section -->
+      <section class="header_section">
+        <div class="left_side_header">
+          <img
+            src="../img/recruit_logo_header.jpg"
+            alt="Logo"
+            id="header_section_logo"
+          />
+          <span>Upgrade</span>
+        </div>
+        <div class="right_side_section">
+          <i
+            class="fa-solid fa-gear padding_background_effect"
+            id="header_setting_btn"
+          ></i>
+          <i
+            class="fa-solid fa-minus padding_background_effect"
+            id="minimize_mainframe"
+          ></i>
+        </div>
+      </section>
+
+      <!-- prospect section -->
+      <section class="prospect_section" id="prospect_section">
+        <!-- image name and position tab -->
+        <div class="prospect_profile_section">
+          <img src="" alt="profile_img" id="searched_user_profile" />
+          <div id="name_and_position">
+            <span id="searched_user_name"></span>
+            <span id="searched_user_position">Frontend Development</span>
+          </div>
+        </div>
+        <!--save sequence buttons tab -->
+        <div class="prospect_btns_section">
+          <button
+            class="prospect_btns"
+            id="prospect_show_btn"
+            style="display: none"
+          >
+            Show Contact
+          </button>
+          <button class="prospect_btns" id="prospect_sequence_btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            Sequence
+          </button>
+          <div
+            class="prospect_sequence_right_btns"
+            id="prospect_sequence_right_btns"
+          >
+            <button
+              class="prospect_small_btns"
+              hoverTitle="View Contact In Lusha"
+            >
+              <i class="fa-solid fa-rocket"></i>
+            </button>
+            <button class="prospect_small_btns" hoverTitle="More Options">
+              <i class="fa-solid fa-ellipsis"></i>
+            </button>
+          </div>
+        </div>
+        <!-- user details small section -->
+        <div class="prospect_user_details" id="prospect_user_details"></div>
+        <div
+          class="prospect_no_data_found"
+          id="prospect_no_data_found"
+          style="display: none"
+        ></div>
+
+        <!-- company details -->
+        <div
+          class="prospect_company_details"
+          id="prospect_company_details"
+          style="display: none"
+        >
+          <!-- company header  -->
+          <div class="company_header">
+            <img src="" alt="logo" id="prospect_company_logo" />
+            <div class="company_name_socials">
+              <span
+                id="prospect_comapny_name"
+                style="font-size: 19px; font-weight: 600"
+              ></span>
+              <div id="prospect_company_socials">
+                <a
+                  href=""
+                  style="display: none"
+                  id="company_website"
+                  target="_blank"
+                  hoverTitle=""
+                  class="companySocials"
+                  ><i class="fa-solid fa-link"></i
+                ></a>
+                <a
+                  href=""
+                  style="display: none"
+                  id="company_linkedin"
+                  target="_blank"
+                  hoverTitle=""
+                  class="companySocials"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a
+                  href=""
+                  style="display: none"
+                  id="company_facebook"
+                  target="_blank"
+                  hoverTitle=""
+                  class="companySocials"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a
+                  href=""
+                  style="display: none"
+                  id="company_twitter"
+                  target="_blank"
+                  hoverTitle=""
+                  class="companySocials"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- company description  -->
+          <span id="prospect_company_description"></span>
+          <div class="company_bottom company_employees">
+            <i class="fa-solid fa-user-group i-color"></i>
+            <span id="prospect_company_employees"></span>
+          </div>
+          <div class="company_bottom company_type">
+            <i class="fa-solid fa-building i-color"></i>
+            <span id="prospect_company_type"></span>
+          </div>
+          <div class="company_bottom company_revenue">
+            <i class="fa-solid fa-money-check-dollar"></i>
+            <span id="prospect_company_revenue"></span>
+          </div>
+          <div class="company_bottom company_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <span id="prospect_company_location"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Insights Section -->
+      <section
+        class="insights_section"
+        id="insights_section"
+        style="display: none"
+      >
+        <h4 style="font-weight: 700; margin-left: 10px">Insights</h4>
+        <div class="table_header">
+          <div
+            class="table_tabs insights_table_tabs insights_table_technologies active_table_tab"
+          >
+            <span>Technologies</span>
+            <div class="bottom_line"></div>
+          </div>
+          <div class="table_tabs insights_table_tabs insights_table_hiring">
+            <span>Hiring</span>
+            <div class="bottom_line"></div>
+          </div>
+          <div class="table_tabs insights_table_tabs insights_table_funding">
+            <span>Funding</span>
+            <div class="bottom_line"></div>
+          </div>
+        </div>
+
+        <!--insights table tabs sections  -->
+        <div
+          class="insights_table_tab_content"
+          id="insights_table_technologies"
+        >
+          <ul>
+            <li><span>Apache</span><span>Load Balancer</span></li>
+            <li><span>Apache</span><span>Load Balancer</span></li>
+            <li><span>Apache</span><span>Load Balancer</span></li>
+            <li><span>Apache</span><span>Load Balancer</span></li>
+            <li><span>Apache</span><span>Load Balancer</span></li>
+          </ul>
+        </div>
+        <div
+          class="no_table_tab_content"
+          id="insights_table_hiring"
+          style="display: none"
+        >
+          <ul>
+            <li class="no_table_content_li">
+              <i class="fa-solid fa-briefcase"></i>
+              <h4 style="font-weight: 700; margin-top: 15px">
+                No Details Found
+              </h4>
+              <span>There is no information available for this company.</span>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="no_table_tab_content"
+          id="insights_table_funding"
+          style="display: none"
+        >
+          <ul>
+            <li class="no_table_content_li">
+              <i class="fa-solid fa-circle-dollar-to-slot"></i>
+              <h4 style="font-weight: 700; margin-top: 15px">
+                No Details Found
+              </h4>
+              <span>There is no information available for this company.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- colleagues notification section  -->
+      <div
+        id="colleagues_popup_notification"
+        class="popup_notification"
+        style="display: none"
+      >
+        <div>
+          <i
+            class="fa-regular fa-circle-xmark close_popup_notification"
+            id="colleagues_close_popup_notification"
+          ></i>
+
+          <p id="colleagues_popup_notification_content">No Credit Left</p>
+        </div>
+      </div>
+      <!-- Colleagues Section -->
+      <section
+        class="colleagues_section"
+        id="colleagues_section"
+        style="display: none"
+      >
+        <h4 style="font-weight: 700; margin-left: 10px">All Colleagues</h4>
+        <div class="table_header">
+          <div
+            class="table_tabs colleagues_table_tabs colleagues_all_employees active_table_tab"
+          >
+            <span>All Employees</span>
+            <div class="bottom_line"></div>
+          </div>
+          <div
+            class="table_tabs colleagues_table_tabs colleagues_saved_employees"
+          >
+            <span>Saved Employees</span>
+            <div class="bottom_line"></div>
+          </div>
+        </div>
+
+        <div class="colleagues_search_people">
+          <input type="text" placeholder="Search People" />
+          <input type="text" placeholder="Search Persona" />
+        </div>
+
+        <!-- colleagues section table content  -->
+        <div class="colleagues_table_tab_content" id="colleagues_all_employees">
+          <ul>
+            <li class="list_hover_effect">
+              <span style="font-weight: 700; color: black">Prince Kumar</span>
+              <span style="color: rgb(168, 168, 168); font-size: 13px"
+                >Full Stack Developer</span
+              >
+              <button>Access Email</button>
+            </li>
+            <li class="list_hover_effect">
+              <span style="font-weight: 700; color: black">Prince Kumar</span>
+              <span style="color: rgb(168, 168, 168); font-size: 13px"
+                >Full Stack Developer</span
+              >
+              <button>Access Email</button>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="colleagues_table_tab_content"
+          id="colleagues_saved_employees"
+          style="display: none"
+        >
+          <ul>
+            <li class="list_hover_effect">
+              <span style="font-weight: 700; color: black; font-size: 14px"
+                >Prince Kumar</span
+              >
+              <span style="color: rgb(168, 168, 168); font-size: 12px"
+                >Full Stack Developer</span
+              >
+              <div class="colleagues_saved_employees_list_btns">
+                <div>
+                  <button><i class="fa-solid fa-envelope"></i></button>
+                  <button><i class="fa-solid fa-phone"></i></button>
+                  <button><i class="fa-solid fa-list"></i></button>
+                  <button><i class="fa-solid fa-paper-plane"></i></button>
+                  <button><i class="fa-solid fa-ellipsis"></i></button>
+                </div>
+                <span>Cold</span>
+              </div>
+            </li>
+            <li class="list_hover_effect">
+              <span style="font-weight: 700; color: black; font-size: 14px"
+                >Prince Kumar</span
+              >
+              <span style="color: rgb(168, 168, 168); font-size: 12px"
+                >Full Stack Developer</span
+              >
+              <div class="colleagues_saved_employees_list_btns">
+                <div>
+                  <button><i class="fa-solid fa-envelope"></i></button>
+                  <button><i class="fa-solid fa-phone"></i></button>
+                  <button><i class="fa-solid fa-list"></i></button>
+                  <button><i class="fa-solid fa-paper-plane"></i></button>
+                  <button><i class="fa-solid fa-ellipsis"></i></button>
+                </div>
+                <span>Cold</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- activities Section -->
+      <section
+        class="activities_section"
+        id="activities_section"
+        style="display: none"
+      >
+        activities Section
+      </section>
+
+      <!-- footer section  -->
+      <section class="footer_section">
+        <div class="footer_btns prospect_section_btn active_footer">
+          <div class="active_tab_line"></div>
+          <div>
+            <i class="fa-solid fa-user"></i>
+            <span>Prospect</span>
+          </div>
+        </div>
+        <div class="footer_btns insights_section_btn">
+          <div class="active_tab_line"></div>
+          <div>
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Insights</span>
+          </div>
+        </div>
+        <div class="footer_btns colleagues_section_btn">
+          <div class="active_tab_line"></div>
+          <div>
+            <i class="fa-solid fa-user-group"></i>
+            <span>Colleagues</span>
+          </div>
+        </div>
+        <div class="footer_btns activities_section_btn">
+          <div class="active_tab_line"></div>
+          <div>
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Activities</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/jQuery.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/apicall.js"></script>
+    <script src="js/frame.js"></script>
+  </body>
+</html>
